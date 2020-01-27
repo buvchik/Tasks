@@ -16,5 +16,16 @@ public class Task3 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		long input = scanner.nextLong();
+		String str = String.valueOf(input);
+		String result ="";
+		int sizeChars=0;
+		if (str.charAt(0)=='-') {
+			result=result + "-";
+			sizeChars=1;
+		}
+		for (int i = str.length()-1; i >=sizeChars ; i--) {
+			result = result+str.charAt(i);
+		}
+		System.out.print(Integer.valueOf(result));
 	}
 }
