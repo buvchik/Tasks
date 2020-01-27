@@ -15,5 +15,6 @@ public class Task1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		long input = scanner.nextLong();
+		System.out.println("Hello");
 	}
 }
