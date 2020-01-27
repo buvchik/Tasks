@@ -11,10 +11,19 @@ package jc01_2020.buvin.lesson03;
 
 import java.util.Scanner;
 
+
 public class Task1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		long input = scanner.nextLong();
-		System.out.println("Hello");
+		int max=0;
+		String str = String.valueOf(input);
+		for (int i = 0; i < str.length() ; i++) {
+			int f = str.charAt(i);
+			if (str.chars().toArray()[i]>(int)max){
+				max = str.chars().toArray()[i];
+			}
+		}
+		System.out.println((char)max);
 	}
 }
