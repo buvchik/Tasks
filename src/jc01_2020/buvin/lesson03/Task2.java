@@ -26,6 +26,6 @@ public class Task2 {
 			else if (enterNum==secret) System.out.println("Угадали!");
 			col++;
 		}
-		if (col>=10) System.out.println("Количество попыток превышено");
+		if (col >=10) System.out.println("Количество попыток превышено");
 	}
 }
