@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package jc01_2020.buvin.lesson02;
+=======
+package jc01_2020.lesson02;
+>>>>>>> //добавил пункт default в case
 
 /*
 *
