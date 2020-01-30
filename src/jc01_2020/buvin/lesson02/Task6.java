@@ -1,23 +1,25 @@
-package jc01_2020.lesson02;
+package main.java;
 
 /*
-*
-* Вводится целое число, обозначающее код символа по таблице ASCII. Определить, это код английской
-* буквы (большой или маленькой) или какой-либо иной символ.
-*
-* Формат вывода (ошибки недопустимы):
-* "Да"
-* "Нет"
-*
-* Принимается любой вариант решения, но с точки зрения чтения и поддержки кода предпочтителен вариант решения через
-* сравнение символов (см. приведение типов)
-*/
+ *
+ * Вводится целое число, обозначающее код символа по таблице ASCII.
+ * Определить, это код английской буквы или какой-либо иной символ.
+ *
+ */
 
 import java.util.Scanner;
+
+import static java.sql.Types.INTEGER;
 
 public class Task6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int code = scanner.nextInt();
+        char ch = (char) code;
+        if ('a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z') {
+            System.out.println("Буква == " + (char) code);
+        } else System.out.println(" Не буква");
+
     }
+
 }
