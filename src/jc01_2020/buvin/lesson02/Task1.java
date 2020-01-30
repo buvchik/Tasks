@@ -1,24 +1,15 @@
-package jc01_2020.lesson02;
+package main.java;
 
 /*
- *
- * Какое из чисел 1, 2 или 3 введено
- * С клавиатуры вводится число. Вывести на экран какое число введено в соответствии с форматом вывода
- *
- * Формат вывода (ошибки недопустимы):
- * "Число 1"
- * "Число 2"
- * "Число 3"
- * "Другое число"
- *
- */
+*
+* Какое из чисел 1, 2 или 3 введено
+*
+*/
 
 import java.util.Scanner;
 
 public class Task1 {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-        int numeric = scanner.nextInt();
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numeric = scanner.nextInt();
         switch(numeric)
@@ -32,11 +23,6 @@ public class Task1 {
             case 3:
                 System.out.println("3");
                 break;
-
-            default:
-                System.out.println("Другое число");
-                break;
         }
-
     }
 }
