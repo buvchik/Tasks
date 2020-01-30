@@ -1,4 +1,4 @@
-package jc01_2020.buvin.lesson04;
+package jc01_2020.lesson04;
 
 /*
  *
@@ -14,35 +14,11 @@ package jc01_2020.buvin.lesson04;
 import java.util.Scanner;
 
 public class Task4 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] array = new int[7];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = scanner.nextInt();
-        }
-
-        int min = array[0], max = array[0];
-        int minInd = 0, maxInd = 0;
-
-        for (int i = 0; i < array.length; i++) {//find min and max
-            if (array[i] > max) {
-                max = array[i];
-                maxInd = i;
-            } else if (array[i] < min) {
-                min = array[i];
-                minInd = i;
-            }
-        }
-        if (maxInd < minInd) {
-            int i = minInd;
-            minInd = maxInd;
-            maxInd = i;
-        }
-        int sum = 0;
-        for (int i = minInd + 1; i < maxInd; i++) {
-            sum = sum + array[i];
-        }
-
-        System.out.println(sum);
-    }
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[] array = new int[7];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = scanner.nextInt();
+		}
+	}
 }

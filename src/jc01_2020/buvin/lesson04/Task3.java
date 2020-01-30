@@ -1,4 +1,4 @@
-package jc01_2020.buvin.lesson04;
+package jc01_2020.lesson04;
 
 /*
  *
@@ -21,15 +21,5 @@ public class Task3 {
 		for (int i = 0; i < array.length; i++) {
 			array[i] = scanner.nextInt();
 		}
-		int min = array[0];
-		int ind =0;
-		for (int i=0;i<array.length;i++) {
-			if (array[i] < 0) array[i] = array[i] * (-1);
-			if (array[i]<min){
-				min=array[i];
-				ind = i;
-				}
-		}
-		System.out.println(ind);
     }
 }

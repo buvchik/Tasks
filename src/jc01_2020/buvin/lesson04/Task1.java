@@ -1,4 +1,4 @@
-package jc01_2020.buvin.lesson04;
+package jc01_2020.lesson04;
 
 /*
  *
@@ -19,10 +19,5 @@ public class Task1 {
 		for (int i = 0; i < array.length; i++) {
 			array[i] = scanner.nextInt();
 		}
-		int summ=0;
-		for (int i: array){
-			if (i>0 && i%2==0) summ += i;
-		}
-		System.out.println(summ);
     }
 }
