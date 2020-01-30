@@ -1,4 +1,4 @@
-package jc01_2020.buvin.lesson03;
+package jc01_2020.lesson03;
 
 import org.junit.Test;
 
