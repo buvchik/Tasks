@@ -1,4 +1,4 @@
-package main.java;
+package jc01_2020.buvin.lesson02;
 
 /*
 *
@@ -18,9 +18,10 @@ public class Task5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int year = scanner.nextInt();
-        if (year%400==0) System.out.println("високосными не являются.");
-        else if(year%4==0) System.out.println("Высокостный");
-        else System.out.println("Невисокостный");
+        if (year%400==0 ) System.out.println("Високосный");
+        if (year%400!=0 && year%100==0) System.out.println("Обычный");
+        else if(year%4==0) System.out.println("Високосный");
+        else System.out.println("Обычный");
 
     }
 }
