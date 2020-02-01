@@ -1,4 +1,4 @@
-package main.java;
+package jc01_2020.buvin.lesson02;
 
 /*
 *
@@ -15,13 +15,16 @@ public class Task1 {
         switch(numeric)
         {
             case 1:
-                System.out.println("1");
+                System.out.println("Число 1");
                 break;
             case 2:
-                System.out.println("2");
+                System.out.println("Число 2");
                 break;
             case 3:
-                System.out.println("3");
+                System.out.println("Число 3");
+                break;
+            default:
+                System.out.println("Другое число");
                 break;
         }
     }
