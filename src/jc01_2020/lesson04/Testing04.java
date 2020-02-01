@@ -1,4 +1,4 @@
-package jc01_2020.lesson02;
+package jc01_2020.lesson04;
 
 import org.junit.Test;
 
@@ -6,70 +6,57 @@ import java.io.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 @SuppressWarnings("all")
 
 //поставьте курсор на следующую строку и нажмите Ctrl+Shift+F10
-public class Testing02 {
+public class Testing04 {
 
     @Test(timeout = 1500)
     public void testTask1() throws Exception {
-        run("2").include("Число 2");
-        run("3").include("Число 3");
-        run("6").include("Другое число");
+        run("5 1 2 -2 -5 8 10").include("20");
+        run("6 0 -8 -6 6 0 5").include("12");
     }
 
     @Test(timeout = 1500)
     public void testTask2() throws Exception {
-        run("27").include("Делится");
-        run("28").include("Не делится");
-        run("0").include("Делится");
+        run("1 2 8 4 16 10 6").include("8\n16\n10");
+        run("8 5 -7 -10 2 1 4").include("8\n5\n2\n1\n4");
+        run("0 0 0 0 0 0 0").include("");
     }
 
     @Test(timeout = 1500)
     public void testTask3() throws Exception {
-        run("10\n0\n").include("Недопустимая операция");
-        run("10\n2\n").include("Делится. Частное = 5");
-        run("10\n3\n").include("Не делится. Частное = 3. Остаток = 1");
+        run("10 -3 -5 2 5").include("3");
+        run("8 -5 -5 -20 4").include("4");
     }
 
     @Test(timeout = 1500)
     public void testTask4() throws Exception {
-        run("7\n3\n22\n").include("7");
-        run("0\n-6\n-8\n").include("-6");
-        run("-10\n-15\n21\n").include("-10");
-        run("7\n3\n3\n").include("3");
-        run("0\n0\n0\n").include("0");
+        run("10 30 20 15 8 21 14").include("35");
+        run("8 -5 -3 -20 4 21 15").include("4");
     }
 
     @Test(timeout = 1500)
     public void testTask5() throws Exception {
-        run("1600").include("Високосный");
-        run("1944").include("Високосный");
-        run("2000").include("Високосный");
-        run("2020").include("Високосный");
-        run("1700").include("Обычный");
-        run("1746").include("Обычный");
-        run("1978").include("Обычный");
-        run("1990").include("Обычный");
+        run("6 6 6 6\n7 7 7 7\n8 9 5 4").include("1");
+        run("5 6 5 10\n5 6 5 10\n5 6 5 10").include("3");
+    }
+
+    @Test//(timeout = 1500)
+    public void testTaskB1() throws Exception {
+        run("4 10 18 5 11 22 13 10 18").include("4\n5\n22\n0\n0\n0\n0");
+        run("9 8 18 5 10 23 20 8 12").include("18\n5\n23\n20\n0\n0\n0");
     }
 
     @Test(timeout = 1500)
-    public void testTask6() throws Exception {
-        run("60").include("Нет");
-        run("65").include("Да");
-        run("79").include("Да");
-        run("90").include("Да");
-        run("91").include("Нет");
-        run("96").include("Нет");
-        run("97").include("Да");
-        run("120").include("Да");
-        run("122").include("Да");
-        run("126").include("Нет");
+    public void testTaskB2() throws Exception {
+        run("6 6 6 6\n7 7 7 7\n8 9 5 4").include("строка: 2, столбец: 3");
+        run("5 6 7 10\n7 6 5 10\n5 7 9 10").include("строка: 0, столбец: 0");
+        run("5 6 7 10\n7 6 5 10\n5 7 9 10").include("строка: 1, столбец: 2");
+        run("5 6 7 10\n7 6 5 10\n5 7 9 10").include("строка: 2, столбец: 0");
     }
 
     /*
@@ -137,11 +124,11 @@ public class Testing02 {
 
     //метод находит и создает класс для тестирования
     //по имени вызывающего его метода, testTaskA1 будет работать с TaskA1
-    private static Testing02 run(String in) {
+    private static Testing04 run(String in) {
         return run(in, true);
     }
 
-    private static Testing02 run(String in, boolean runMain) {
+    private static Testing04 run(String in, boolean runMain) {
         Throwable t = new Throwable();
         StackTraceElement trace[] = t.getStackTrace();
         StackTraceElement element;
@@ -160,11 +147,11 @@ public class Testing02 {
         System.out.println("Старт теста для " + clName);
         if (!in.isEmpty()) System.out.println("input:" + in);
         System.out.println("---------------------------------------------");
-        return new Testing02(clName, in, runMain);
+        return new Testing04(clName, in, runMain);
     }
 
     //-------------------------------  тест ----------------------------------------------------------
-    public Testing02() {
+    public Testing04() {
         //Конструктор тестов
     }
 
@@ -176,7 +163,7 @@ public class Testing02 {
     private StringWriter strOut = new StringWriter(); //накопитель строки вывода
 
     //Основной конструктор тестов
-    private Testing02(String className, String in, boolean runMain) {
+    private Testing04(String className, String in, boolean runMain) {
         //this.className = className;
         aClass = null;
         try {
@@ -202,18 +189,18 @@ public class Testing02 {
     }
 
     //проверка вывода
-    private Testing02 is(String str) {
+    private Testing04 is(String str) {
         assertTrue("ERROR:Ожидается такой вывод:\n<---начало---->\n" + str + "<---конец--->",
                 strOut.toString().equals(str));
         return this;
     }
 
-    private Testing02 include(String str) {
+    private Testing04 include(String str) {
         assertTrue("ERROR:Строка не найдена: " + str + "\n", strOut.toString().contains(str));
         return this;
     }
 
-    private Testing02 exclude(String str) {
+    private Testing04 exclude(String str) {
         assertTrue("ERROR:Лишние данные в выводе: " + str + "\n", !strOut.toString().contains(str));
         return this;
     }
