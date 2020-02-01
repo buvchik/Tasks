@@ -18,14 +18,18 @@ public class Task6 {
 		int vertical = scanner.nextInt();
 
 		for (int i = 0; i < horizontal; i++) {
- 			for (int j = 0; j < vertical; j++) {
-					if (i==0 && j!=vertical-1)System.out.print("*");
-					else if (j==vertical-1)System.out.println("*");
-					else if (i==horizontal-1){System.out.print("*");}
-					else if (j==0)System.out.print("*");
-					else System.out.print("-");
-			}
+			for (int j = 0; j < vertical; j++) {
+				if (i==0 && j!=vertical-1)System.out.print("*");
+				else if (j==vertical-1)System.out.println("*");
+				else if (i==horizontal-1){System.out.print("*");}
+				else if (j==0)System.out.print("*");
+				else System.out.print("-");
+				System.out.print("+");
+				for (int f = 0; f < vertical; f++) {
+					System.out.print("-");
+				}
 
+				System.out.println();
+			}
 		}
-	}
-}
+	}}
