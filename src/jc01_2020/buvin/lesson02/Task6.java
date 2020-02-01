@@ -1,4 +1,4 @@
-package main.java;
+package jc01_2020.buvin.lesson02;
 
 /*
  *
@@ -17,8 +17,8 @@ public class Task6 {
         int code = scanner.nextInt();
         char ch = (char) code;
         if ('a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z') {
-            System.out.println("Буква == " + (char) code);
-        } else System.out.println(" Не буква");
+            System.out.println("Да");
+        } else System.out.println("Нет");
 
     }
 
