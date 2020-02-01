@@ -1,4 +1,4 @@
-package jc01_2020.lesson04;
+package jc01_2020.buvin.lesson04;
 
 /*
  *
@@ -23,6 +23,14 @@ public class Task2 {
 		int[] array = new int[7];
 		for (int i = 0; i < array.length; i++) {
 			array[i] = scanner.nextInt();
+		}
+		double sred=0;
+		for (int i: array){
+			sred = sred+i;
+		}
+		sred = sred/(array.length-1);
+		for (int i: array){
+			if (i>sred) System.out.println(i);
 		}
     }
 }
