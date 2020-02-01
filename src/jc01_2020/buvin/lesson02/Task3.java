@@ -1,4 +1,4 @@
-package main.java;
+package jc01_2020.buvin.lesson02;
 
 /*
 *
@@ -14,16 +14,13 @@ public class Task3 {
         Scanner scanner = new Scanner(System.in);
         long first = scanner.nextLong();
         long second = scanner.nextLong();
-        if (second==0) System.out.println("no Делиться");
+        if (second==0) System.out.println("Недопустимая операция");
         else
         if (first%second==0) {
-
-            System.out.println("Целая часть=" +(int)first/second);
+            System.out.println("Делится. Частное = " +(int)first/second);
         }
         else {
-
-            System.out.println("Целая часть =" +(int)first/second);
-            System.out.println("Остатк =" +first%second);
+            System.out.println("Не делится. Частное = " +(int)first/second+". Остаток = " +first%second);
         }
 
     }
