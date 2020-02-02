@@ -28,7 +28,7 @@ public class Task5 {
         for (int i = 0; i < array.length; i++) {
             int sum = 0;
             for (int j = 0; j < array[0].length; j++) {
-                sum = sum + array[i][j];
+                sum += array[i][j];
                 if (sum > maxSum) {
                     maxSum = sum;
                     ind = i;
