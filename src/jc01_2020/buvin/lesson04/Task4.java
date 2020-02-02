@@ -24,7 +24,7 @@ public class Task4 {
         int min = array[0], max = array[0];
         int minInd = 0, maxInd = 0;
 
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {//find min and max
             if (array[i] > max) {
                 max = array[i];
                 maxInd = i;
