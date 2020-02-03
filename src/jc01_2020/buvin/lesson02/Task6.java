@@ -9,7 +9,6 @@ package jc01_2020.buvin.lesson02;
 
 import java.util.Scanner;
 
-import static java.sql.Types.INTEGER;
 
 public class Task6 {
     public static void main(String[] args) {

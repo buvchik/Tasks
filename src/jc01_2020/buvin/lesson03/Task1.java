@@ -19,8 +19,7 @@ public class Task1 {
 		int max=0;
 		String str = String.valueOf(input);
 		for (int i = 0; i < str.length() ; i++) {
-			int f = str.charAt(i);
-			if (str.chars().toArray()[i]>(int)max){
+			if (str.chars().toArray()[i]>max){
 				max = str.chars().toArray()[i];
 			}
 		}
