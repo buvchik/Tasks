@@ -21,7 +21,7 @@ public class Task2 {
 
         String[] strArr = str.trim().split(" ");// убираем пробелы по бокам и делим на слова " "
         String result = String.join("", strArr).toLowerCase(); //соединяем строки в одну
-        String revers = new StringBuilder(result).reverse().toString().toLowerCase();
+        String revers = new StringBuilder(result).reverse().toString().toLowerCase(); // палиндром
         if (result.equals(revers))
             System.out.println("Да");
         else System.out.println("Нет");
