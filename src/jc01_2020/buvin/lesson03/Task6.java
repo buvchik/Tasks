@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class Task6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int horizontal = 5;//scanner.nextInt();
-        int vertical = 5;//scanner.nextInt();
+        int horizontal = scanner.nextInt();
+        int vertical = scanner.nextInt();
 
         for (int i = 0; i < vertical; i++) {
             System.out.println();
