@@ -20,8 +20,8 @@ public class TaskB2 {
         String str = scanner.nextLine();
         boolean result = false;
 
-        Pattern p = Pattern.compile("[a-zA-Z]*[-][[a-zA-Z]&&[\\D]]");
-        Pattern p1 = Pattern.compile("^[а-яА-я]+[-][а-яА-я]");
+        Pattern p = Pattern.compile("[a-zA-Z]+[-]([a-zA-Z]+)$");
+        Pattern p1 = Pattern.compile("^[а-яА-я]+[-]([а-яА-я]+)$");
 
 
 
