@@ -6,8 +6,8 @@ public class Main {
         Time time2 = new Time((byte)20,(byte)5,(byte)5);
         Time time3 = new Time(-1);
 
-        System.out.println(time1.compareTo(time2));
-        System.out.println(time2.compareTo(time3));
+        time1.print(time1.compareTo(time2));
+        time2.print(time2.compareTo(time3));
 
     }
 }
