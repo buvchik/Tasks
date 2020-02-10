@@ -18,6 +18,7 @@ public class Time {
     Time(byte sec, byte min, byte hour) {
         if (sec < 0 || sec >= 60 || min < 0 || min >= 60 || hour < 0 || hour >= 24) {
             System.out.println("Значения выходят за рамки дозволенного)");
+
         } else {
             this.sec = sec;
             this.min = min;
@@ -34,12 +35,28 @@ public class Time {
 
     public byte compareTo(Time newTime) {
         if (allInSecond==-1||newTime.allInSecond==-1) {
-            System.out.println("Error: Incorrect data entered (:");
-            return 0;
+           // System.out.println("Error: Incorrect data entered (:");
+            return -2;
         } else if (newTime.allInSecond > allInSecond) {
             return 1;
         } else if (newTime.allInSecond < allInSecond) {
             return -1;
         } else return 0;
+    }
+    public void print(int i){
+        switch (i){
+            case -1:
+                System.out.println("Первое время меньше");
+                break;
+            case 0:
+                System.out.println("Время равно");
+                break;
+            case 1:
+                System.out.println("Первое время больше");
+                break;
+            default:
+                System.out.println("Error: Incorrect data entered (:");
+                break;
+        }
     }
 }
