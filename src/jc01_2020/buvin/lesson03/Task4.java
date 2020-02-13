@@ -1,4 +1,4 @@
-package jc01_2020.lesson03;
+package jc01_2020.buvin.lesson03;
 
 /*
  *
@@ -12,8 +12,14 @@ package jc01_2020.lesson03;
 import java.util.Scanner;
 
 public class Task4 {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int numeric = scanner.nextInt();
-	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numeric = scanner.nextInt();
+        if (numeric == 0 || numeric == 1) System.out.println("1");
+        int result = 1;
+        for (int i = 2; i <= numeric; i++) {
+            result = result * i;
+        }
+        if (numeric > 0) System.out.println(result);
+    }
 }
