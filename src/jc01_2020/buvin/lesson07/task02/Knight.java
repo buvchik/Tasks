@@ -1,5 +1,5 @@
 package jc01_2020.buvin.lesson07.task02;
-
+//конь
 public class Knight extends Figure {
     public Knight(char vertical, int horizontal) {
         super(vertical, horizontal);
@@ -17,24 +17,22 @@ public class Knight extends Figure {
 
             if (toHorizontal > getHorizontal()) {
                 if (toVerticalInt > fromVerticalInt) {
-                    toVerticalInt--;
-                    toHorizontal--;
+                    toVerticalInt-=1;
+                    toHorizontal-=2;
                 } else if (toVerticalInt < fromVerticalInt) {
-                    toVerticalInt++;
-                    toHorizontal--;
-                } else if (toVerticalInt == fromVerticalInt) {
-                    toHorizontal--;
-                }
+                    toVerticalInt+=1;
+                    toHorizontal-=2;
+                }else
+                    return false;
             } else if (toHorizontal < getHorizontal()) {
                 if (toVerticalInt > fromVerticalInt) {
-                    toVerticalInt--;
-                    toHorizontal++;
+                    toVerticalInt-=2;
+                    toHorizontal+=1;
                 } else if (toVerticalInt < fromVerticalInt) {
-                    toVerticalInt++;
-                    toHorizontal++;
-                } else if (toVerticalInt == fromVerticalInt) {
-                    toHorizontal++;
-                }
+                    toVerticalInt+=1;
+                    toHorizontal+=2;
+                }else
+                    return false;
             } else
                 return false;
             if (toHorizontal == getHorizontal() && toVerticalInt == fromVerticalInt) {
