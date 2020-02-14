@@ -8,6 +8,11 @@ public abstract class Figure {
 	public Figure(final char vertical, final int horizontal) {
 		this.vertical = vertical;
 		this.horizontal = horizontal;
+		if (!(0 < charToByte(vertical) &&  charToByte(vertical) < 9 && 0 < horizontal && horizontal < 9))
+		{
+			System.out.println("Данные за пределами.");
+
+		}
 	}
 
 	public abstract boolean moveTo(char toVertical, int toHorizontal);
@@ -18,6 +23,12 @@ public abstract class Figure {
 
 	public int getHorizontal() {
 		return horizontal;
+	}
+
+	public int charToByte(char ch) {
+		if (65 <= ch && ch <= 72) return ch - 71;
+		else if (97 <= ch && ch <= 104) return ch - 96;
+		else return 0;
 	}
 
 }

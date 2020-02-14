@@ -15,5 +15,13 @@ package jc01_2020.buvin.lesson07.task02;
 public class Application {
 
 	public static void main(String[] args) {
+
+		Figure bishop = new Bishop('a',2);
+		System.out.println(bishop.moveTo('c',4));
+
+		Figure king = new King('b', 1);
+		System.out.println();
+		System.out.println(king.moveTo('a', 2));
+
 	}
 }
