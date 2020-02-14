@@ -1,4 +1,4 @@
-package jc01_2020.lesson07.task01;
+package jc01_2020.buvin.lesson07.task01;
 
 /*
  *
@@ -16,6 +16,15 @@ package jc01_2020.lesson07.task01;
 public class Application {
 
 	public static void main(String[] args) {
+		Box box= new Box(1000);
+		Shape cylinder = new Cylinder(1 ,5);
+		Shape piramid = new Pyramid(20 ,27);
+		Shape parallel = new Parallelepiped(20,5 ,5);
+		Shape sphere = new Sphere(5);
+		System.out.println(box.Add(cylinder) +" box volume = "+ box.getVolume()+" || "+ cylinder.getClass().getSimpleName() +" volume = "+cylinder.getVolume());
+		System.out.println(box.Add(piramid)+" box volume = "+ box.getVolume()+" || "+ piramid.getClass().getSimpleName() +" volume = "+piramid.getVolume());
+		System.out.println(box.Add(parallel)+" box volume = "+ box.getVolume()+" || "+ parallel.getClass().getSimpleName() +" volume = "+parallel.getVolume());
+		System.out.println(box.Add(sphere)+" box volume = "+ box.getVolume()+" || "+ sphere.getClass().getSimpleName() +" volume = "+sphere.getVolume());
 
 	}
 

@@ -1,4 +1,4 @@
-package jc01_2020.lesson08.task02;
+package jc01_2020.buvin.lesson08.task02;
 
 /*
  *

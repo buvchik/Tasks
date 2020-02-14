@@ -1,4 +1,4 @@
-package jc01_2020.lesson08.task03;
+package jc01_2020.buvin.lesson08.task03;
 
 /*
  * Создать объект своего класса Date (не java.util или java.sql), используя вложенные классы Год, Месяц, День.
