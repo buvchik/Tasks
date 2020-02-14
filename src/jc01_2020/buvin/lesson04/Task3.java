@@ -16,20 +16,21 @@ import java.util.Scanner;
 
 public class Task3 {
     public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int[] array = new int[5];
-		for (int i = 0; i < array.length; i++) {
-			array[i] = scanner.nextInt();
-		}
-		int min = array[0];
-		int ind =0;
-		for (int i=0;i<array.length;i++) {
-			if (array[i] < 0) array[i] = array[i] * (-1);
-			if (array[i]<min){
-				min=array[i];
-				ind = i;
-				}
-		}
-		System.out.println(ind);
+        Scanner scanner = new Scanner(System.in);
+        int[] array = new int[5];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        int min = array[0];
+        int ind = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) array[i] = array[i] * (-1);
+            if (array[i] < min) {
+                min = array[i];
+                ind = i;
+            }
+        }
+        System.out.println(ind);
     }
 }
