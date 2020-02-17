@@ -8,13 +8,11 @@ package jc01_2020.buvin.lesson08.task02;
  *
  */
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
-public class Application {
+public class Application2 {
 
     static class Cat {
     }
@@ -23,27 +21,25 @@ public class Application {
         boolean apply(Object o);
     }
 
-    static <T> List<T> filter(Object[] objects, Filter filter) {
+    static <T> T[] filter(Object[] objects, Filter filter) {
         List<T> result = new ArrayList<>();
-        for (Object n : objects) {
-            if (filter.apply(n)) {
-                result.add((T) n);
+        for (int i = 0; i < objects.length; i++) {
+            if (filter.apply(objects[i])) {
+                result.add((T) objects[i]);
             }
         }
-        return result;
+        return (T[]) result.toArray();
     }
 
     public static void main(String[] args) {
-        Object[] array = {"String", 1, 2.0, new Cat(), 85L, new Cat()};
-        List arrayNumber = filter(array, new Filter() {
+        Object[] array = {"String", 1, 2.0, new Application.Cat(), 85L, new Application.Cat()};
+        Object[] result = filter(array, new Filter() {
             @Override
             public boolean apply(Object o) {
                 return o instanceof Number;
             }
         });
+        System.out.println(Arrays.toString(result));
 
-        System.out.print(Arrays.asList(arrayNumber));
     }
-
-
 }
