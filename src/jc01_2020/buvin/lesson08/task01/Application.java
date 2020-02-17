@@ -27,6 +27,7 @@ public class Application {
                	break;
             }
         }
+
 //		Pattern pattern = Pattern.compile("[A-Za-z]");
 //        if (pattern.matcher(letter).find()){
 //			System.out.println(pattern.matcher(letter));
