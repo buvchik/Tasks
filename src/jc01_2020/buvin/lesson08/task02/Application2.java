@@ -33,12 +33,7 @@ public class Application2 {
 
     public static void main(String[] args) {
         Object[] array = {"String", 1, 2.0, new Application.Cat(), 85L, new Application.Cat()};
-        Object[] result = filter(array, new Filter() {
-            @Override
-            public boolean apply(Object o) {
-                return o instanceof Number;
-            }
-        });
+        Object[] result = filter(array, o -> o instanceof Number);
         System.out.println(Arrays.toString(result));
 
     }
