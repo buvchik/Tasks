@@ -30,7 +30,9 @@ package jc01_2020.buvin.lesson08.task03;
 
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Application {
 
@@ -48,9 +50,10 @@ public class Application {
         DayOfWeek(int index) {
             this.index = index;
         }
-        public static DayOfWeek valueOf (int index){
-            for (DayOfWeek d:DayOfWeek.values()) {
-                if (d.index==index){
+
+        public static DayOfWeek valueOf(int index) {
+            for (DayOfWeek d : DayOfWeek.values()) {
+                if (d.index == index) {
                     return d;
                 }
             }
@@ -73,7 +76,7 @@ public class Application {
 
         public class Year {
             public boolean leapYear() {
-                if (year % 400 == 0) return true;
+                if (Date.this.year % 400 == 0) return true;
                 if (year % 400 != 0 && year % 100 == 0) return false;
                 else if (year % 4 == 0) return true;
                 else return false;
@@ -129,21 +132,22 @@ public class Application {
             }
         }
 
-        class Day {
-        }
+        public class Day { }
 
         public DayOfWeek getDayOfWeek() {
             return DayOfWeek.valueOf(day);
         }
 
         public int getDayOfYear() {
-            if (leapYear)return 356;
+            if (leapYear) return 356;
             else return 355;
         }
-        public String dateToString(Date date){
-            return date.day+"."+date.month+"."+date.year;
+
+        public String dateToString(Date date) {
+            return date.day + "." + date.month + "." + date.year;
         }
-        public int daysBetween(Date startDate, Date endDate) {
+
+        public long daysBetween(Date startDate, Date endDate) {
             SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
             java.util.Date date1 = null;
             java.util.Date date2 = null;
@@ -153,18 +157,18 @@ public class Application {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            int days =  (int)(date1.getTime() - date2.getTime()) / (24 * 60 * 60 * 1000);
+            long days = ChronoUnit.DAYS.between(date1.toInstant(), date2.toInstant());
             return days;
-        }
+        } //дней между датами
 
     }
 
     public static void main(String[] args) {
-        Date date = new Date(2020, 2, 17);
-        Date date2 = new Date(2025, 12, 17);
-        System.out.println(date.daysBetween(date,date2));;
+        Date date = new Date(2020, 2, 14);
+        Date date2 = new Date(2020, 2, 17);
+        //System.out.println(date.daysBetween(date, date2));
         DayOfWeek dayOfWeek = DayOfWeek.Вторник;
-        System.out.println(DayOfWeek.valueOf(1));
+        //System.out.println(DayOfWeek.valueOf(1));
 
     }
 }

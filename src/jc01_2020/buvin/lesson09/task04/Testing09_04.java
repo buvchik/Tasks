@@ -1,4 +1,4 @@
-package jc01_2020.lesson04;
+package jc01_2020.buvin.lesson09.task04;
 
 import org.junit.Test;
 
@@ -12,51 +12,12 @@ import static org.junit.Assert.fail;
 @SuppressWarnings("all")
 
 //поставьте курсор на следующую строку и нажмите Ctrl+Shift+F10
-public class Testing04 {
+public class Testing09_04 {
 
     @Test(timeout = 1500)
-    public void testTask1() throws Exception {
-        run("5 1 2 -2 -5 8 10").include("20");
-        run("6 0 -8 -6 6 0 5").include("12");
-    }
-
-    @Test(timeout = 1500)
-    public void testTask2() throws Exception {
-        run("1 2 8 4 16 10 6").include("8\n16\n10");
-        run("8 5 -7 -10 2 1 4").include("8\n5\n2\n1\n4");
-        run("0 0 0 0 0 0 0").include("");
-    }
-
-    @Test(timeout = 1500)
-    public void testTask3() throws Exception {
-        run("10 -3 -5 2 5").include("3");
-        run("8 -5 -5 -20 4").include("4");
-    }
-
-    @Test(timeout = 1500)
-    public void testTask4() throws Exception {
-        run("10 30 20 15 8 21 14").include("35");
-        run("8 -5 -3 -20 4 21 15").include("4");
-    }
-
-    @Test(timeout = 1500)
-    public void testTask5() throws Exception {
-        run("6 6 6 6\n7 7 7 7\n8 9 5 4").include("1");
-        run("5 6 5 10\n5 6 5 10\n5 6 5 10").include("3");
-    }
-
-    @Test//(timeout = 1500)
-    public void testTaskB1() throws Exception {
-        run("4 10 18 5 11 22 13 10 18").include("4\n5\n22\n0\n0\n0\n0");
-        run("9 8 18 5 10 23 20 8 12").include("18\n5\n23\n20\n0\n0\n0");
-    }
-
-    @Test(timeout = 1500)
-    public void testTaskB2() throws Exception {
-        run("6 6 6 6\n7 7 7 7\n8 9 5 4").include("строка: 2, столбец: 3");
-        run("5 6 7 10\n7 6 5 10\n5 7 9 10").include("строка: 0, столбец: 0");
-        run("5 6 7 10\n7 6 5 10\n5 7 9 10").include("строка: 1, столбец: 2");
-        run("5 6 7 10\n7 6 5 10\n5 7 9 10").include("строка: 2, столбец: 0");
+    public void testApplication() throws Exception {
+        run("10 15 1 48 51 134 455 89 90 8").include("58");
+        run("0 14 155 21 75 96 38 54 90 2").include("49");
     }
 
     /*
@@ -124,11 +85,11 @@ public class Testing04 {
 
     //метод находит и создает класс для тестирования
     //по имени вызывающего его метода, testTaskA1 будет работать с TaskA1
-    private static Testing04 run(String in) {
+    private static Testing09_04 run(String in) {
         return run(in, true);
     }
 
-    private static Testing04 run(String in, boolean runMain) {
+    private static Testing09_04 run(String in, boolean runMain) {
         Throwable t = new Throwable();
         StackTraceElement trace[] = t.getStackTrace();
         StackTraceElement element;
@@ -147,11 +108,11 @@ public class Testing04 {
         System.out.println("Старт теста для " + clName);
         if (!in.isEmpty()) System.out.println("input:" + in);
         System.out.println("---------------------------------------------");
-        return new Testing04(clName, in, runMain);
+        return new Testing09_04(clName, in, runMain);
     }
 
     //-------------------------------  тест ----------------------------------------------------------
-    public Testing04() {
+    public Testing09_04() {
         //Конструктор тестов
     }
 
@@ -163,7 +124,7 @@ public class Testing04 {
     private StringWriter strOut = new StringWriter(); //накопитель строки вывода
 
     //Основной конструктор тестов
-    private Testing04(String className, String in, boolean runMain) {
+    private Testing09_04(String className, String in, boolean runMain) {
         //this.className = className;
         aClass = null;
         try {
@@ -189,18 +150,18 @@ public class Testing04 {
     }
 
     //проверка вывода
-    private Testing04 is(String str) {
+    private Testing09_04 is(String str) {
         assertTrue("ERROR:Ожидается такой вывод:\n<---начало---->\n" + str + "<---конец--->",
                 strOut.toString().equals(str));
         return this;
     }
 
-    private Testing04 include(String str) {
+    private Testing09_04 include(String str) {
         assertTrue("ERROR:Строка не найдена: " + str + "\n", strOut.toString().contains(str));
         return this;
     }
 
-    private Testing04 exclude(String str) {
+    private Testing09_04 exclude(String str) {
         assertTrue("ERROR:Лишние данные в выводе: " + str + "\n", !strOut.toString().contains(str));
         return this;
     }

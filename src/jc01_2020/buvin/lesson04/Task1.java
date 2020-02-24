@@ -23,6 +23,6 @@ public class Task1 {
 		for (int i: array){
 			if (i>0 && i%2==0) summ += i;
 		}
-		System.out.println(summ);
+		System.out.print(summ);
     }
 }
