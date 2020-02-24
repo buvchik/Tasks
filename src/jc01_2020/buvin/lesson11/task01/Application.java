@@ -14,12 +14,16 @@ import java.util.Random;
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        invokeMethodWithException();
+        try {
+            invokeMethodWithException();
+        } catch (NullPointerException e) {
+        } catch (FileNotFoundException e) {
+        }
     }
 
     private static void invokeMethodWithException() throws NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException {
         int i = new Random().nextInt(4);
-        try {
+
             if (i == 0) {
                 throw new NullPointerException();
             } else if (i == 1) {
@@ -29,9 +33,7 @@ public class Application {
             } else if (i == 3) {
                 throw new URISyntaxException("", "");
             }
-        } catch (NullPointerException e) {
-        } catch (FileNotFoundException e) {
-        }
+
     }
 
 }
