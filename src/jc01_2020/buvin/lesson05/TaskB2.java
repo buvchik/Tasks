@@ -20,11 +20,9 @@ public class TaskB2 {
         String str = scanner.nextLine();
         boolean result = false;
 
-        Pattern p = Pattern.compile("[a-zA-Z]+[-]([a-zA-Z]+)$|[а-яА-я]+[-]([а-яА-я]+)$");
+        Pattern p = Pattern.compile("[A-Z]+[-]([a-zA-Z]+)$|[а-яА-я]+[-]([а-яА-я]+)$");
         Matcher matcher = p.matcher(str);
         if (matcher.find()) result = true;
-        else result = false;
-
 
         System.out.println(result);
     }

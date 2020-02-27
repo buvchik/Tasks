@@ -31,7 +31,7 @@ public class Task4 {
             if (!s.equals("")) {
 				count++;
             	result[count] = Integer.valueOf(s);
-                System.out.print(result[count]+" ");
+                System.out.println(result[count]);
             }
         }
         if (count==0) System.out.println("Цифр нет");

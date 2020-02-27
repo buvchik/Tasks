@@ -29,7 +29,7 @@ public class Task2 {
         for (int i : array) {
             sred += i;
         }
-        sred = sred / (array.length - 1);
+        sred = sred / (array.length);
         for (int i : array) {
             if (i > sred) System.out.println(i);
         }
