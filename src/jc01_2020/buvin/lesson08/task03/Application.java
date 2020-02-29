@@ -166,9 +166,9 @@ public class Application {
     public static void main(String[] args) {
         Date date = new Date(2020, 2, 14);
         Date date2 = new Date(2020, 2, 17);
-        //System.out.println(date.daysBetween(date, date2));
+        System.out.println(date.daysBetween(date, date2));
         DayOfWeek dayOfWeek = DayOfWeek.Вторник;
-        //System.out.println(DayOfWeek.valueOf(1));
+        System.out.println(DayOfWeek.valueOf(1));
 
     }
 }

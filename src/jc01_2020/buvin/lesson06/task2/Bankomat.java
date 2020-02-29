@@ -15,7 +15,7 @@ public class Bankomat {
     }
 
     protected boolean keepMoney(int money) {
-        int c20 = 0;
+        int c20;
         int c50 = 0;
         int c100 = 0;
         if (money / 100 >= 0 && money / 100 <= cash100) {
