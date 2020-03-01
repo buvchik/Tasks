@@ -13,8 +13,40 @@ package jc01_2020.buvin.lesson12;
  *
  */
 
-public class Task4 {
-	public static void main(String[] args) {
+import java.util.*;
 
-	}
+public class Task4 {
+    public static void main(String[] args) {
+        Map<Car, String> listCar = new HashMap<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            listCar.put(new Car(Car.Color.values()[random.nextInt(5)].toString()), "");
+        }
+
+//        System.out.print(listCar.toString());
+        listCar.forEach((key, value) -> listCar.put(key, key.carColor));
+
+        Optional<Map.Entry<Car, String>> last = listCar.entrySet().stream()// find last Car
+                .reduce((first, second) -> second);
+
+        listCar.entrySet().stream()
+				.limit(10)
+                .filter(x -> x.getValue().equals(listCar.entrySet().stream()// find last Car
+						.reduce((first, second) -> second).get().getValue()))
+                .forEach(System.out::println);
+
+        System.out.println(" Цвет последнего : "+last.get().getValue());
+    }
+}
+
+class Car {
+    enum Color {RED, BLUE, GREEN, BLACK, WHITE}
+
+    String carColor;
+
+    public Car(String carColor) {
+        this.carColor = carColor;
+    }
+
 }

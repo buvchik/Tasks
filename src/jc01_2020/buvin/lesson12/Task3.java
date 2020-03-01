@@ -41,7 +41,7 @@ public class Task3 {
         System.out.println("Первоначальный:");
         System.out.println(map);
         System.out.println("Поменяли Value:");
-        map.forEach((key, value) -> map.put(key, value + key));
+        map.forEach((key, value) -> map.replace(key, value + key));
         System.out.println(map);
 
 //Set
