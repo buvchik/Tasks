@@ -18,7 +18,7 @@ public class Application {
     static List<Integer> fillList(List<Integer> list, int size) {
         Scanner scanner = new Scanner(System.in);
 		System.out.println(size +" элементов :");
-        for (int i = 0; i < size; i++) {//заполняем первый список
+        for (int i = 0; i < size; i++) {//заполняем  список
             int str = scanner.nextInt();
             list.add(str);
         }
