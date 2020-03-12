@@ -78,7 +78,6 @@ public class MatrixMultiplication {
 
 		} else {
 			// Заполнить массивы А и В с помощью scanner.nextInt(). Тестовые данные заполняются построчно для каждого массива
-
 			for (int i = 0; i < rowsA; i++) {
 				for (int j = 0; j < columnsA; j++) {
 					a[i][j] = scanner.nextInt();
@@ -97,14 +96,9 @@ public class MatrixMultiplication {
 			print(b, rowsB, columnsB);
 			System.out.println("-----------");
 			// Перемножить матрицы
-			int[][] resultat = new int[rowsA][columnsB];
 			for (int i = 0; i < rowsA; i++) {
 				for (int j = 0; j < columnsB; j++) {
 					for (int s = 0; s < rowsA; s++) {
-							int ax =a[i][s];
-							int ax1 =c[i][j];
-							int ax2 =b[s][j];
-
 						c[i][j] += a[i][s] * b[s][j];
 					}
 				}
