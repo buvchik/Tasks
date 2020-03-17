@@ -21,6 +21,7 @@ public class Task1 {
 	    if (date1.isBefore(date2)) System.out.println("date1 меньше date2");
 	    else if (date1.isAfter(date2)) System.out.println("date1 больше date2");
 	    else if (date1.isEqual(date2))System.out.println("date1 равна date2");
-	}
+
+    }
 
 }
