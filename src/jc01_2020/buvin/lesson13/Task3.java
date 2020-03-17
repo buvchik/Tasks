@@ -52,7 +52,7 @@ public class Task3 {
 
     public static void main(String[] args) {
 
-        add("Anna", "109/03/2020");
+        add("Anna", "10/03/2020");
         add("Andry", "14/08/1983");
         add("Vova", "01/12/2015");
         System.out.println(map);
