@@ -14,8 +14,8 @@ import java.util.Random;
 public class Task1 {
 	public static void main(String[] args) {
         Random r = new Random();
-        LocalDate date1 = LocalDate.of(2020,3,1+r.nextInt(3));
-        LocalDate date2 = LocalDate.of(2020,3,1+r.nextInt(3));
+        LocalDate date1 = LocalDate.of(2020,3,1+r.nextInt(4));
+        LocalDate date2 = LocalDate.of(2020,3,1+r.nextInt(4));
         System.out.println(date1);
         System.out.println(date2);
 	    if (date1.isBefore(date2)) System.out.println("date1 меньше date2");
