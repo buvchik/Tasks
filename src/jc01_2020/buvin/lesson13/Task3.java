@@ -13,46 +13,68 @@ package jc01_2020.buvin.lesson13;
 import java.time.DateTimeException;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.Formatter;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Task3 {
     static Map<String, LocalDate> map = new TreeMap<>();
 
-    static boolean add(String name, String date) {
+    static void add(String name, String date) {
         String[] str = date.split("/");
         try {
             map.put(name, LocalDate.of(Integer.valueOf(str[2]), Integer.valueOf(str[1]), Integer.valueOf(str[0])));
         } catch (DateTimeException e) {
-			System.out.println(String.format("Не корректные данные для %s",name));
-            return false;
+            System.out.println(String.format("Не корректные данные для %s", name));
+
         }
-        return true;
     }
 
-	static void print(Map.Entry<String, LocalDate> s){
-		LocalDate newDate = LocalDate.of(s.getValue().getYear(),LocalDate.now().getMonth(),LocalDate.now().getDayOfMonth());
-    	Duration duration = Duration.between(newDate.atStartOfDay(),s.getValue().atStartOfDay());
-    	System.out.println(String.format("%s - %s", s.getKey(), Math.abs(duration.toDays())));
-	}
+    static Duration duration;
+
+    static boolean isLeapYear(int year) {
+        return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
+    }
+
+    static void print(Map.Entry<String, LocalDate> s) {
+
+        StringBuilder sb = new StringBuilder();
+        Formatter formatter = new Formatter(sb, Locale.getDefault());
+
+        LocalDate newDate = LocalDate.of(s.getValue().getYear(), LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
+        if (newDate.isBefore(s.getValue())) {
+            duration = Duration.between(newDate.atStartOfDay(), s.getValue().atStartOfDay());
+            System.out.println(formatter.format("%s - %d", s.getKey(), Math.abs(duration.toDays())));
+        } else {
+            duration = Duration.between(newDate.atStartOfDay(), s.getValue().atStartOfDay());
+            if (isLeapYear(s.getValue().getYear()+1)) {
+                System.out.println(formatter.format("%s - %d", s.getKey(), Math.abs(366-duration.toDays())));
+            }else
+            {
+                System.out.println(formatter.format("%s - %d", s.getKey(), Math.abs(365-duration.toDays())));
+            }
+
+        }
+    }
 
     static void allDR() {
-    	for (Map.Entry<String, LocalDate> s : map.entrySet()) {
-           print(s);
+        for (Map.Entry<String, LocalDate> s : map.entrySet()) {
+            print(s);
         }
     }
 
     static void dR(String name) {
         for (Map.Entry<String, LocalDate> s : map.entrySet()) {
             if (name.equals(s.getKey())) {
-            	print(s);
+                print(s);
             }
         }
     }
 
     public static void main(String[] args) {
 
-        add("Anna", "10/03/2020");
+        add("Anna", "24/03/2020");
         add("Andry", "14/08/1983");
         add("Vova", "01/12/2015");
         System.out.println(map);
