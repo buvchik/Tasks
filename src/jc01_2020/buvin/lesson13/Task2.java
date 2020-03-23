@@ -17,11 +17,12 @@ import java.util.Random;
 public class Task2 {
     public static void main(String[] args) {
 
-        System.out.println( ZonedDateTime.now());
+        System.out.println(ZonedDateTime.now());
         ArrayList<String> allZone = new ArrayList<>(ZoneId.getAvailableZoneIds());
-
+        LocalDate nowDate = LocalDate.now();
+        LocalTime nowTime = LocalTime.now();
         for (int i = 0; i < 10; i++) {
-            System.out.println(ZonedDateTime.of(LocalDate.now(), LocalTime.now(), ZoneId.of(allZone.get(new Random().nextInt(allZone.size())))));
+            System.out.println(ZonedDateTime.of(nowDate, nowTime, ZoneId.of(allZone.get(new Random().nextInt(allZone.size())))));
         }
 
     }
