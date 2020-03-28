@@ -12,7 +12,7 @@ import java.io.*;
 
 public class Application {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
         Car car = new Car("Mersedes", "White", 100000);
         ObjectOutputStream objectOutputStream;
 
