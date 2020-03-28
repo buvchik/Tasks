@@ -8,10 +8,28 @@ package jc01_2020.buvin.lesson14.task03;
  *
  */
 
+import java.io.*;
+
 public class Application {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Car car = new Car("Mersedes", "White", 100000);
+        ObjectOutputStream objectOutputStream;
 
-	}
+        File folder = new File("src/jc01_2020/buvin/lesson14/resource");
+        if (!folder.exists()) {
+            folder.mkdir();
+        }
+        try {
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(folder+"/Car.dat"));
+            objectOutputStream.writeObject(car);
+            objectOutputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
