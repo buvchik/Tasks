@@ -27,6 +27,9 @@ public class Application {
 //            System.out.println(str2);
             if (str.equals(str2)) System.out.println("Совпадают");
             else System.out.println("Не совпадают");
+            fr.close();
+            fileInputStream.close();
+            inputStreamReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
