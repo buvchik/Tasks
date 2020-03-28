@@ -14,19 +14,18 @@ public class Application {
 
     public static void main(String[] args)  {
         Car car = new Car("Mersedes", "White", 100000);
-        ObjectOutputStream objectOutputStream;
 
         File folder = new File("src/jc01_2020/buvin/lesson14/resource");
         if (!folder.exists()) {
             folder.mkdir();
         }
+
+        ObjectOutputStream objectOutputStream;
         try {
             objectOutputStream = new ObjectOutputStream(new FileOutputStream(folder+"/Car.dat"));
             objectOutputStream.writeObject(car);
             objectOutputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        }  catch (IOException e) {
             e.printStackTrace();
         }
 
