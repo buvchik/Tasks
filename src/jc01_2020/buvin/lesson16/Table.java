@@ -5,7 +5,7 @@ import java.util.Random;
 public class Table {
     private int size;
     public int[][] table;
-    boolean stop=false;
+    boolean stop = false;
 
     public Table(int size) {
         this.size = size;
@@ -15,7 +15,7 @@ public class Table {
     public boolean isFree() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (table[i][j] == 0&&!stop) return true;
+                if (table[i][j] == 0 && !stop) return true;
             }
         }
         return false;
@@ -55,25 +55,37 @@ public class Table {
 
     public void isWinner(int x, int y, int playerId) {
         //горизонталь
-        int count = size - 1;
+        int count1 = size - 1;
         for (int i = 0; i < size; i++) {
             if (table[i][y] == table[x][y] && x != i) {
-                count--;
-            }else
+                count1--;
+            }
+        }
+        int count2 = size - 1;
+        for (int i = 0; i < size; i++) {
             if (table[x][i] == table[x][y] && y != i) {
-                count--;
-            }else
+                count2--;
+            }
+        }
+        int count3 = size - 1;
+        for (int i = 0; i < size; i++) {
             if (table[i][i] == table[x][y] && y != i && x != i) {
-                count--;
-            }else
-            if (table[size-i-1][i] == table[x][y] && y != i && (size-i-1) != i) {
-                count--;
+                count3--;
+            }
+        }
+        int count4 = size - 1;
+        for (int i = 0; i < size; i++) {
+            if (table[size - i - 1][i] == table[x][y] && y != i && (size - i - 1) != i) {
+                count4--;
             }
         }
 
-        if (count == 0) {
-            System.out.println("Выиграл: " + playerId);
-            stop=true;
+        if (count1 == 0||count2==0||count3==0||count4==0) {
+            if (playerId == 1)
+                System.out.println("Выиграл: Первый");
+            else if (playerId == -1) System.out.println("Выиграл: Второй");
+
+            stop = true;
 //            Thread.interrupted();
         }
     }
