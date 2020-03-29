@@ -5,7 +5,7 @@ import java.util.Random;
 public class Table {
     private int size;
     public int[][] table;
-    boolean stop = false;
+    public boolean stop = false;
 
     public Table(int size) {
         this.size = size;
@@ -37,6 +37,8 @@ public class Table {
                     }
                 }
             }
+        }else if (!stop){
+            System.out.println("Ничья");
         }
         return false;
     }
@@ -56,25 +58,20 @@ public class Table {
     public void isWinner(int x, int y, int playerId) {
         //горизонталь
         int count1 = size - 1;
+        int count2 = size - 1;
+        int count3 = size - 1;
+        int count4 = size - 1;
+
         for (int i = 0; i < size; i++) {
             if (table[i][y] == table[x][y] && x != i) {
                 count1--;
             }
-        }
-        int count2 = size - 1;
-        for (int i = 0; i < size; i++) {
             if (table[x][i] == table[x][y] && y != i) {
                 count2--;
             }
-        }
-        int count3 = size - 1;
-        for (int i = 0; i < size; i++) {
             if (table[i][i] == table[x][y] && y != i && x != i) {
                 count3--;
             }
-        }
-        int count4 = size - 1;
-        for (int i = 0; i < size; i++) {
             if (table[size - i - 1][i] == table[x][y] && y != i && (size - i - 1) != i) {
                 count4--;
             }
@@ -84,9 +81,7 @@ public class Table {
             if (playerId == 1)
                 System.out.println("Выиграл: Первый");
             else if (playerId == -1) System.out.println("Выиграл: Второй");
-
             stop = true;
-//            Thread.interrupted();
         }
     }
 }
